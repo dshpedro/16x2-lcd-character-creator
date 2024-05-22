@@ -21,6 +21,7 @@
     background-color: #949afb;
     border-collapse: separate;
     border-spacing: 0.25em;
+    border-color: solid black;
     aspect-ratio: 5 / 8;
     width: 3.8%;
     position: absolute;
