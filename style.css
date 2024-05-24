@@ -23,8 +23,8 @@ body {
 }
 
 .grid-container {
-    transform: translate(-.5%, -2%);
     background-color: darkblue;
+    transform: translate(-.5%, -2%);
     background-color: #949afb;
 }
 
@@ -42,4 +42,13 @@ body {
     width: 1.1vh;
     height: 1.1vh;
     background-color: #787ccc;
+}
+
+#printButton {
+    position: absolute;
+    display: block;
+    align-self: flex-end;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
 }
