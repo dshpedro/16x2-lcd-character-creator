@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    document.getElementById('printButton').addEventListener('click', function() {
+    function updateGridData() {
         const cells = document.querySelectorAll('.grid-cell');
         cells.forEach((cell, cellIndex) => {
             const innerCells = cell.querySelectorAll('.grid-inner-cell');
@@ -93,7 +93,57 @@ document.addEventListener("DOMContentLoaded", function() {
                 grid[cellIndex][row][col] = isInnerCellOn(innerCell);;
             });
         });
-        console.log(grid);
+    }
+
+    function showBinaryGrid() {
+        const textContainer = document.getElementById('text-container');
+        textContainer.innerHTML = '';
+        
+        let currentCell = 0;
+        const table = document.createElement('table');
+        for (let row = 0; row < 2; row++) {
+            const tableRow = document.createElement('tr');
+
+            for (let col = 0; col < 16; col++) {
+                const textBox = document.createElement('textarea');
+                textBox.className = 'grid-textbox';
+                currentCell = row * 16 + col;
+                textBox.value = formatGridToText(currentCell);
+                textBox.readOnly = true;
+                
+                const tableCell = document.createElement('td');
+                tableCell.appendChild(textBox);
+                tableRow.appendChild(tableCell);
+            }
+
+            table.appendChild(tableRow);
+        }
+
+        textContainer.appendChild(table);
+    }
+
+    function formatGridToText(gridIndex) {
+        var text = '';
+        for (let i = 0; i < 8; i++) {
+            for (let j = 0; j < 5; j++) {
+                text += Number(grid[gridIndex][i][j]);
+            }
+            text += '\n';
+        }
+        return text;
+    }
+
+    let readWrite = false;
+    document.getElementById('readWriteRadioBtn').addEventListener('click', function() {
+        if (readWrite) {
+            document.getElementById('text-container').innerHTML = '';
+            readWrite = false;
+        }
+        else{
+            updateGridData();
+            showBinaryGrid();
+            readWrite = true;
+        }
     });
 
 });

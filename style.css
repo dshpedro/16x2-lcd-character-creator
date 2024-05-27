@@ -1,54 +1,85 @@
 html, body {
+    box-sizing: border-box;
     height: 100%;
     margin: 0;
+    padding: 20px;
+    padding-top: 0px;
 }
 
 body {
     display: flex;
-    background-color: dimgray;
+    flex-direction: column;
+    background-color: #404040;
 }
  
+.header-container {
+    display: flex;
+    align-items: baseline;
+}
+
+.header {
+    color: white;
+    margin-right: 20px;
+}
+
 .container {
     display: flex;
+    height: 100%;
     align-items: center; /* vertical */
     justify-content: center; /* horizontal */
-    width: 100%;
-    position: relative;
 }
 
 .lcd-image {
     position: absolute;
-    display: block;
-    height: 90%;
+    width: 98%;
 }
 
 .grid-container {
-    background-color: darkblue;
     transform: translate(-.5%, -2%);
     background-color: #949afb;
 }
 
 .grid-cell {
     aspect-ratio: 5/8;
-    width: 9vh;
+    background-color: #949afb;
     display: inline-flex;
+    width: 9vh;
     align-items: center; /* vertical */
     justify-content: center; /* horizontal */
-    background-color: #949afb;
 }
 
 .grid-inner-cell {
-    aspect-ratio: 1/1;
-    width: 1.1vh;
-    height: 1.1vh;
     background-color: #787ccc;
+    height: 1.1vh;
+    width: 1.1vh;
 }
 
-#printButton {
+#readWriteRadioBtn {
     position: absolute;
-    display: block;
-    align-self: flex-end;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 20px;
+    left: 23%;
+    top: 12%;
+    background-color: transparent;
+    border-color: darkgreen;
+    color: white;
+    font-family: monospace;
+    font-size:x-large;
+    font-weight: bold;
+}
+
+#text-container {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);;
+}
+
+.grid-textbox {
+    aspect-ratio: 5/8;
+    width: 9vh;
+    border-width: 0px;
+    padding: 0px;
+    background-color: transparent;
+    color: white;
+    font-size: small;
+    letter-spacing: .5vh;
+    outline: none;
+    text-align: center;
 }

@@ -2,14 +2,19 @@
 <html>
     <head>
         <title>16x2 LCD Character Creator</title>
-        <link href="style.css" rel="stylesheet">        
+        <link href="style.css" rel="stylesheet">
     </head>
     <body>
+        <div class="header-container">
+            <h1 class="header">16x2 LCD Character Creator</h1>
+            <p style="color: darkgray;">Mouse controls: Left click - draw; Right click - erase. </p>
+        </div>
         <div class="container">
                 <img src="16x2_lcd.svg" class="lcd-image">
                 <table id="grid-container" class="grid-container"> </table>
+                <div id="text-container"></div>
                 <script src="script.js"></script>
         </div>
-        <button id="printButton">console.log(grid)</button>
+        <button id="readWriteRadioBtn">R/W</button>
     </body>
 </html>
